@@ -1,0 +1,97 @@
+/* Ensure the body takes full height and centers content */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e0e0e0; 
+}
+
+/* Battery container styling */
+.battery-container {
+  text-align: center;
+}
+
+/* Styling for the battery element */
+.battery {
+  position: relative;
+  width: 200px;
+  height: 100px;
+  border: 5px solid #333;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Battery level inside */
+.battery-level {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  height: 90%;
+  border-radius: 10px;
+  background-color: #4caf50; 
+  width: 50%; 
+  transition: width 0.5s ease; 
+}
+
+/* Battery status text styling */
+.battery-status {
+  margin-top: 10px;
+}
+
+#charge-level {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+#charging-time {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Adding some visual flair for charging */
+.battery-charging .battery-level {
+  animation: pulse 1.5s infinite; /* Pulsing effect for charging */
+}
+
+/* Keyframes for pulsing animation */
+@keyframes pulse {
+  0%{
+    height: 0%;
+    background: red
+  }
+  25%{
+    height: 25%;
+    background: orange;
+  }
+  50% {
+    height: 50%;
+    background: yellow;
+  }
+  75% {
+    height: 75%;
+    background: #d7fc03;
+  }
+  100%{
+    height: 100%;
+    background: rgb(0, 255, 0);
+  }
+}
+
+/* Charging icon styling */
+.charging-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: #ffeb3b;
+  display: none; /* Hide by default */
+}
+
+.battery-charging .charging-icon {
+  display: block; /* Show when charging */
+}
